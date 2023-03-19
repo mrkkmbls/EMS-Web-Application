@@ -1,0 +1,18 @@
+﻿@model Department
+
+<h1> Update Employee</h1>
+
+<form method="post" asp-action="Update" asp-controller="Department">
+    <!-- need of form element in HTML 5-->
+
+    <div>
+        <label asp-for="departmentId"></label>
+        <input asp-for="departmentId" readonly />
+    </div>
+    <div>
+        <label asp-for="departmentName"></label>
+        <input asp-for="departmentName" />
+    </div>
+
+    <button type="submit">Update</button>
+</form>

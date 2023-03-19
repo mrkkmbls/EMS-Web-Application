@@ -1,0 +1,30 @@
+﻿@model Employee
+
+<h1> Update Employee</h1>
+
+<form method="post" asp-action="Update" asp-controller="Employee">
+    <!-- need of form element in HTML 5-->
+
+    <div>
+        <label asp-for="employeeId"></label>
+        <input asp-for="employeeId" readonly />
+    </div>
+    <div>
+        <label asp-for="employeeName"></label>
+        <input asp-for="employeeName" />
+    </div>
+    <div>
+        <label asp-for="employeeDOB"></label>
+        <input asp-for="employeeDOB" />
+    </div>
+    <div>
+        <label asp-for="employeeEmail"></label>
+        <input asp-for="employeeEmail" />
+    </div>
+    <div>
+        <label asp-for="employeePhone"></label>
+        <input asp-for="employeePhone" />
+    </div>
+
+    <button type="submit">Update</button>
+</form>

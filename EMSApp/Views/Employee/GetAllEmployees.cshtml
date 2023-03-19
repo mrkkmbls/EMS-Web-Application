@@ -1,0 +1,45 @@
+﻿@model List<Employee>
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<H1>GET ALL EMPLOYEES</H1>
+
+<a asp-action="Create" asp-controller="Employee">Add Employee</a>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Department</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <th scope="row">@employee.employeeId</th>
+                <td>@employee.employeeName</td>
+                <td>@employee.employeeDOB</td>
+                <td>@employee.employeeEmail</td>
+                <td>@employee.employeePhone</td>
+                <!--<td>//employee.Department.departmentName</td>-->
+                <td><a href="#"></a></td>
+                <td><a asp-controller="Employee" asp-action="Details" asp-route-employeeId="@employee.employeeId">View</a></td>
+                <td><a asp-controller="Employee" asp-action="Update" asp-route-employeeId="@employee.employeeId">Edit</a></td>
+                <td><a asp-controller="Employee" asp-action="Delete" asp-route-employeeId="@employee.employeeId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
